@@ -5,7 +5,6 @@ const ScrollingText = () => {
         <div>
             <div className="w-3/4 mx-auto">
                 <Marquee
-                    // style={{ height: "200px" }}
                     className="text-4xl text-red-500 h-12"
                     pauseOnHover={true}
                     speed={80}>
