@@ -39,6 +39,7 @@ const router = createBrowserRouter([{
             element: <PhoneSignUp></PhoneSignUp>
         },
 
+
     ]
 
 }]);

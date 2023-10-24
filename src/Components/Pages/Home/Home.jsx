@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/UserContext";
 import { useContext } from "react";
+import ScrollingText from "./ScrollingText";
 
 const Home = () => {
     const navigate = useNavigate();
@@ -24,14 +25,17 @@ const Home = () => {
         }
     }
     return (
-        <div className='text-center my-5'>
-            <h1 className="text-4xl uppercase underline">This is homepage</h1>
-            <h1>The Current User is:{user?.email || user?.phoneNumber}</h1>
+        <div>
+            <ScrollingText></ScrollingText>
+            <div className='text-center my-5'>
+                <h1 className="text-4xl uppercase underline">This is homepage</h1>
+                <h1>The Current User is:{user?.email || user?.phoneNumber}</h1>
 
-            <button onClick={handlecheck} className="btn btn-md btn-info">Check</button>
+                <button onClick={handlecheck} className="btn btn-md btn-info">Check</button>
 
-            {user ? <button onClick={signOut} className="btn btn-sm">SignOut</button>
-                : <button onClick={handleClick} className="btn btn-sm">SignIn</button>}
+                {user ? <button onClick={signOut} className="btn btn-sm">SignOut</button>
+                    : <button onClick={handleClick} className="btn btn-sm">SignIn</button>}
+            </div>
         </div>
     );
 };
