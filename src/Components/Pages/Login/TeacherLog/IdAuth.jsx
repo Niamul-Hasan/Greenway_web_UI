@@ -29,7 +29,7 @@ const IdAuth = () => {
         <div className="flex flex-col justify-center items-center lg:h-screen bg-gradient-to-br from-lime-600 via-cyan-300 to-yellow-500">
             <div className="card w-96 glass shadow-xl">
                 <div className="card-body">
-                    <h2 className="card-title">{flag ? "WelCome To GreenWay Log System" : "Please Enter Your User ID"}</h2>
+                    <h2 className="card-title">{flag ? "WelCome To GreenWay Log System" : "Please Enter Your Teacher ID"}</h2>
                     {!flag && <form onSubmit={verifyID}>
                         <input
                             type="text"

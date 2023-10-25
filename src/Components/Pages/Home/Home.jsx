@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/UserContext";
 import { useContext } from "react";
 import ScrollingText from "./ScrollingText";
+import banner from "../../../assets/green.gif"
 
 const Home = () => {
     const navigate = useNavigate();
@@ -27,6 +28,9 @@ const Home = () => {
     return (
         <div>
             <ScrollingText></ScrollingText>
+            <div className="mx-auto w-11/12">
+                <img src={banner} alt="" className="w-full rounded-xl shadow-lg shadow-black" />
+            </div>
             <div className='text-center my-5'>
                 <h1 className="text-4xl uppercase underline">This is homepage</h1>
                 <h1>The Current User is:{user?.email || user?.phoneNumber}</h1>
