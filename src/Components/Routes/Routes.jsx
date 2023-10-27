@@ -6,6 +6,7 @@ import PhoneSignUp from "../Pages/PhoneSignUp/PhoneSignUp";
 import Home from "../Pages/Home/Home";
 import LiftingPage from "../Pages/Login/Lifting/LiftingPage";
 import IdAuth from "../Pages/Login/TeacherLog/IdAuth";
+import StudentInfo from "../Pages/Login/StudentLog/StudentInfo";
 
 
 
@@ -37,6 +38,10 @@ const router = createBrowserRouter([{
         {
             path: '/phoneSign',
             element: <PhoneSignUp></PhoneSignUp>
+        },
+        {
+            path: '/studentInfo',
+            element: <StudentInfo></StudentInfo>
         },
 
 

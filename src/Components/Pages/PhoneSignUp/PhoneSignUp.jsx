@@ -44,7 +44,7 @@ const PhoneSignUp = () => {
         if (otp === "" || otp === null) return;
         try {
             await result.confirm(otp);
-            navigate("/");
+            navigate("/studentInfo");
         } catch (err) {
             setError(err.message);
         }
