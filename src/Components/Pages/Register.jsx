@@ -1,12 +1,15 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../Context/UserContext';
 import { FcGoogle } from 'react-icons/fc';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import useToken from './Hooks/useToken';
 
 const Register = () => {
     const { createUser, signInWithGoogle } = useContext(AuthContext);
     const [isHovering, setIsHovering] = useState(false);
+    const navigate = useNavigate();
+    const [user, setUser] = useState('');
 
     const handleMouseEnter = () => {
         setIsHovering(true);
@@ -27,16 +30,25 @@ const Register = () => {
         console.log(email, password);
         createUser(email, password).then(result => {
             const user = result.user;
+            setUser(user);
             console.log('registered user', user)
         })
             .catch(error => {
                 console.error(error);
             })
     }
+    const [token] = useToken(user)
+    useEffect(() => {
+        if (token) {
+            console.log("after geting token", user); //it is for checking purpose
+            navigate('/');
+        }
+    }, [token, navigate, user])
 
     const handleGoogle = () => {
         signInWithGoogle().then(result => {
             const user = result.user;
+            setUser(user);
             console.log(user);
         }).catch(error => console.error(error));
     }

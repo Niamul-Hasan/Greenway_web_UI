@@ -26,7 +26,6 @@ const PhoneSignUp = () => {
         }
         try {
             const response = await setRecapcha(value);
-            console.log(response);
             setResult(response);
             setFlag(true);
 

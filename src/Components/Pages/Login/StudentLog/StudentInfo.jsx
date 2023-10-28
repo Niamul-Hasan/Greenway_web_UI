@@ -1,9 +1,19 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../../Context/UserContext";
+import useToken from "../../Hooks/useToken";
+import { useNavigate } from "react-router-dom";
 const StudentInfo = () => {
     const { user } = useContext(AuthContext);
+    const navigate = useNavigate()
     console.log(user);
+    const [token] = useToken(user);
+    useEffect(() => {
+        if (token) {
+            console.log("after geting token", user, token); //it is for checking purpose
+
+        }
+    }, [token, navigate, user])
     const { register, formState: { errors }, handleSubmit } = useForm();
     const onSubmit = data => console.log(data);
 
