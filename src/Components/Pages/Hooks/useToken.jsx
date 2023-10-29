@@ -8,10 +8,10 @@ const useToken = user => {
         const email = user?.email;
         const phoneNumber = user?.phoneNumber;
         const curentUser = { email: email, phoneNumber: phoneNumber };
-        console.log(curentUser);
+
         if (email) {
             // console.log(curentUser);
-            fetch(`http://localhost:4040/user/${email}`, {
+            fetch(`http://localhost:4040/Tuser/${email}`, {
                 method: "PUT",
                 headers: {
                     'context-type': "application/json"
@@ -26,7 +26,7 @@ const useToken = user => {
         }
         if (phoneNumber) {
             // console.log(curentUser);
-            fetch(`http://localhost:4040/user/${phoneNumber}`, {
+            fetch(`http://localhost:4040/Stduser/${phoneNumber}`, {
                 method: "PUT",
                 headers: {
                     'context-type': "application/json"

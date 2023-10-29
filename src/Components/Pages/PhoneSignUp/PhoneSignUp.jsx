@@ -10,6 +10,7 @@ const PhoneSignUp = () => {
     const [value, setValue] = useState("");
     // eslint-disable-next-line no-unused-vars
     const [error, setError] = useState("");
+    const [disable, setDisable] = useState(false);
     const [flag, setFlag] = useState(false);
     const [otp, setOtp] = useState("");
     const [result, setResult] = useState("");
@@ -20,6 +21,7 @@ const PhoneSignUp = () => {
     const handleOTP = async (e) => {
         e.preventDefault();
         console.log(value);
+        setDisable(true);
         setError("");
         if (value === "" || value === undefined) {
             return setError("Please enter a valid phone number!");
@@ -34,6 +36,7 @@ const PhoneSignUp = () => {
             setError(err.message);
         }
     }
+
 
 
     const verifyOtp = async (e) => {
@@ -66,7 +69,7 @@ const PhoneSignUp = () => {
                             <div className='mt-2' id="recaptcha-container"></div>
                             <div className='mt-2 text-red-500 font-semibold'>{error}</div>
                             <div className="card-actions justify-end mt-4">
-                                {!error ? <><button onClick={handleCancel} className="btn btn-sm btn-error">cancel</button><button className="btn btn-sm btn-success" type='submit'>send otp</button>
+                                {!error ? <><button onClick={handleCancel} className="btn btn-sm btn-error">cancel</button><button disabled={disable} className="btn btn-sm btn-success" type='submit'>send otp</button>
                                 </> : <button onClick={() => window.location.reload(false)}
                                     className='btn btn-sm btn-warning'>Try Again</button>}
                             </div>
@@ -81,7 +84,7 @@ const PhoneSignUp = () => {
                             <div className='mt-2' id="recaptcha-container"></div>
                             <div className="card-actions justify-end mt-4">
                                 <button onClick={handleCancel} className="btn btn-sm btn-error">cancel</button>
-                                <button className="btn btn-sm btn-success" type='submit'>verify otp</button>
+                                <button disabled={otp.length !== 6} className="btn btn-sm btn-success" type='submit'>verify otp</button>
                             </div>
 
                         </form >
