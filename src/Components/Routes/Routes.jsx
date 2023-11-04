@@ -7,6 +7,7 @@ import Home from "../Pages/Home/Home";
 import LiftingPage from "../Pages/Login/Lifting/LiftingPage";
 import IdAuth from "../Pages/Login/TeacherLog/IdAuth";
 import StudentInfo from "../Pages/Login/StudentLog/StudentInfo";
+import AccountCheck from "../Pages/Login/StudentLog/AccountCheck";
 
 
 
@@ -42,6 +43,10 @@ const router = createBrowserRouter([{
         {
             path: '/studentInfo',
             element: <StudentInfo></StudentInfo>
+        },
+        {
+            path: '/accountCheck',
+            element: <AccountCheck />
         },
 
 
