@@ -47,25 +47,27 @@ const AccountCheck = () => {
     }
 
     return (
-        <div>
-            <div className='flex flex-row justify-between items-center gap-2 px-4'>
+        <div className='bg-gradient-to-tl from-green-200 via-green-300 to-blue-500 h-screen'>
+            <div className='flex flex-row justify-between items-center gap-2'>
                 <div className='w-4/5'>
                     <img src={sidebg} alt="" className='w-full' />
                 </div>
-                <div className='flex flex-col items-center justify-center w-max'>
+                <div className='flex flex-col items-center justify-center w-max me-4'>
                     <div className="avatar">
                         <div className="rounded w-44">
                             <img src={CurrnetInfo?.image} />
                         </div>
+                        <div className="badge badge-primary">primary</div>
                     </div>
+
                     <h1 className='font-semibold text-xsm'> ID: {CurrnetInfo?.Id}</h1>
                 </div>
             </div>
             <div className='flex flex-row items-between justify-center gap-10 py-4'>
                 <div className='flex flex-col justify-start items-start px-10'>
                     <div className='font-bold text-2xl border-r-2 border-teal-800 my-2 w-full border-b-2 rounded bg-'> Name: {CurrnetInfo?.Name}</div>
-                    <div className='font-bold text-2xl border-r-2 border-teal-800 my-2 w-full border-b-2 rounded bg-'> Fathers Name: {CurrnetInfo?.Father}</div>
-                    <div className='font-bold text-2xl border-r-2 border-teal-800 my-2 w-full border-b-2 rounded bg-'> Mothers Name: {CurrnetInfo?.Mother}</div>
+                    <div className='font-bold text-2xl border-r-2 border-teal-800 my-2 w-full border-b-2 rounded bg-'> Father&#39;s Name: {CurrnetInfo?.Father}</div>
+                    <div className='font-bold text-2xl border-r-2 border-teal-800 my-2 w-full border-b-2 rounded bg-'> Mother&#39;s Name: {CurrnetInfo?.Mother}</div>
                     <div className='font-bold text-2xl border-r-2 border-teal-800 my-2 w-full border-b-2 rounded bg-'> Class: {CurrnetInfo?.Class}</div>
                     <div className='font-bold text-2xl border-r-2 border-teal-800 my-2 w-full border-b-2 rounded bg-'> Group: {CurrnetInfo?.Group}</div>
                 </div>
