@@ -5,6 +5,7 @@ import ScrollingText from "./ScrollingText";
 import banner from "../../../assets/green.gif"
 
 const Home = () => {
+
     const navigate = useNavigate();
     const { user, logOut } = useContext(AuthContext);
     console.log(user);
@@ -22,12 +23,13 @@ const Home = () => {
             return console.log("user has a nice email address");
         }
         if (user.phoneNumber) {
-            return console.log("user has  a fine phone number")
+            navigate("/accountCheck");
         }
     }
     return (
         <div>
             <ScrollingText></ScrollingText>
+
             <div className="mx-auto w-11/12">
                 <img src={banner} alt="" className="w-full rounded-xl shadow-lg shadow-black" />
             </div>
