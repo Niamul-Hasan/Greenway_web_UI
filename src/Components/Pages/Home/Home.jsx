@@ -3,6 +3,7 @@ import { AuthContext } from "../../Context/UserContext";
 import { useContext } from "react";
 import ScrollingText from "./ScrollingText";
 import banner from "../../../assets/green.gif"
+import Navbar from "../SharedPages/Navbar";
 
 const Home = () => {
 
@@ -29,6 +30,7 @@ const Home = () => {
     return (
         <div>
             <ScrollingText></ScrollingText>
+            <Navbar></Navbar>
 
             <div className="mx-auto w-11/12">
                 <img src={banner} alt="" className="w-full rounded-xl shadow-lg shadow-black" />

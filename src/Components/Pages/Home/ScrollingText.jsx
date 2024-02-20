@@ -3,7 +3,7 @@ const ScrollingText = () => {
 
     return (
         <div>
-            <div className="w-3/4 mx-auto rounded-lg shadow-lg shadow-zinc-200 bg-yellow-200">
+            <div className="w-full mx-auto rounded-lg shadow-lg shadow-zinc-200 bg-yellow-300">
                 <Marquee
                     className="text-4xl text-red-500 h-12"
                     pauseOnHover={true}
