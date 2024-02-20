@@ -417,15 +417,3 @@ button:hover {
     font-weight: bold;
     cursor: pointer;
 }
-
-
-
-footer {
-    background-color: #002b29;
-    color: white;
-    font-size: 1rem;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
