@@ -40,9 +40,11 @@ const Navbar = () => {
 
         <li className="font-bold "><NavLink to='/'>About Us</NavLink></li>
 
-        <li>{user && <span><FaRegUserCircle></FaRegUserCircle>{user?.email || user?.phoneNumber}</span>}</li>
-        <li>{user ? <button onClick={signOut} className='btn btn-sm btn-error shadow-xl'>Sign Out</button>
-            : <button className='btn btn-sm btn-success' onClick={() => navigate("/lifting")}>Login</button>}</li>
+        <div className="flex flex-col items-center lg:hidden">
+            <li>{user && <span><FaRegUserCircle></FaRegUserCircle>{user?.email || user?.phoneNumber}</span>}</li>
+            <li>{user ? <button onClick={signOut} className='btn btn-xs btn-error shadow-xl'>Sign Out</button>
+                : <button className='btn btn-sm btn-success' onClick={() => navigate("/lifting")}>Login</button>}</li>
+        </div>
 
 
     </>
@@ -62,10 +64,11 @@ const Navbar = () => {
                     <NavLink to='/' >
                         <div className="flex flex-row justify-around items-center gap-4 bg-gray-200">
                             <div className="">
-                                <img src={logo} alt="" className='h-full w-full' />
+                                <img src={logo} alt="" className='h-full w-full' style={{ height: "80px", width: "80px" }} />
                             </div>
-                            <div>
-                                <a className="logo-name" href="/"><h2><span className="greenway"><span style={{ color: "green" }}>G</span>reenway</span> <span className="academic"><span style={{ color: "red" }}>I</span>nstitute </span></h2></a>
+                            <div className="logo-name flex lg:flex-col lg:items-start flex-row items-center justify-center gap-2 lg:gap-0">
+                                <p><span className="greenway"><span style={{ color: "green" }}>G</span>reenway</span></p>
+                                <p> <span className="academic"><span style={{ color: "red" }}>I</span>nstitute </span></p>
                             </div>
                         </div>
                     </NavLink>
@@ -80,6 +83,11 @@ const Navbar = () => {
                 </div>
 
                 <div className="navbar-end">
+                    <div className="hidden lg:flex flex-col items-center justify-center w-full">
+                        {user && <div className="flex flex-row justify-center items-center gap-2"><p><FaRegUserCircle></FaRegUserCircle></p><p>{user?.email || user?.phoneNumber}</p></div>}
+                        <p>{user ? <button onClick={signOut} className='btn btn-xs btn-error shadow-xl'>Sign Out</button>
+                            : <button className='btn btn-sm btn-success' onClick={() => navigate("/lifting")}>Login</button>}</p>
+                    </div>
 
                     <label htmlFor="dashBoard-drawer" tabIndex={2} className="btn btn-ghost lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>

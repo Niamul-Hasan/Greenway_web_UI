@@ -26,7 +26,7 @@ const AccountCheck = () => {
     if (isLoading) {
         return <Loading></Loading>
     }
-
+    console.log(data)
 
 
     const CurrnetInfo = {
@@ -50,9 +50,9 @@ const AccountCheck = () => {
     return (
         <>
             <Navbar></Navbar>
-            <div className='bg-gradient-to-tl from-green-200 via-green-300 to-blue-500 h-screen'>
-                <div className='flex flex-row justify-between items-center gap-2'>
-                    <div className='w-4/5'>
+            <div className='bg-gradient-to-tl from-green-200 via-green-300 to-blue-500'>
+                <div className='flex lg:flex-row lg:justify-between lg:items-center flex-col items-center gap-2'>
+                    <div className='lg:w-4/5 w-full'>
                         <img src={sidebg} alt="" className='w-full' />
                     </div>
                     <div className='flex flex-col items-center justify-center w-max me-4'>
@@ -66,7 +66,7 @@ const AccountCheck = () => {
                         <h1 className='font-semibold text-xsm'> ID: {CurrnetInfo?.Id}</h1>
                     </div>
                 </div>
-                <div className='flex flex-row items-between justify-center gap-10 py-4'>
+                <div className='flex lg:flex-row flex-col items-center lg:items-between justify-center gap-10 py-4'>
                     <div className='flex flex-col justify-start items-start px-10'>
                         <div className='font-bold text-2xl border-r-2 border-teal-800 my-2 w-full border-b-2 rounded bg-'> Name: {CurrnetInfo?.Name}</div>
                         <div className='font-bold text-2xl border-r-2 border-teal-800 my-2 w-full border-b-2 rounded bg-'> Father&#39;s Name: {CurrnetInfo?.Father}</div>

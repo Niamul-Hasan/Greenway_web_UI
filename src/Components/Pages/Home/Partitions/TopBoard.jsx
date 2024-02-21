@@ -21,14 +21,14 @@ const TopBoard = () => {
 
 
     return (
-        <div className="bg-gradient-to-t from-neutral-700 via-stone-400 to-slate-700 flex flex-col lg:flex-row justify-center lg:justify-between p-3 items-center w-full mx-auto">
+        <div className="bg-gradient-to-l from-emerald-700 via-rose-500 to-green-400 flex flex-col lg:flex-row justify-center lg:justify-between p-3 items-center w-full mx-auto">
             <div>
                 <div className='text-xl font-mono text-black flex flex-row justify-center items-center gap-2'>
                     <h1><FcClock></FcClock></h1>
-                    <p className='font-thin text-warning'>{time.toLocaleTimeString()}</p>
+                    <p className='font-thin text-black'>{time.toLocaleTimeString()}</p>
                 </div>
             </div>
-            <div> <ScrollingText></ScrollingText></div>
+            <div className='w-full lg:w-9/12'> <ScrollingText></ScrollingText></div>
             <div>
                 <div className='text-lg font-thin text-white flex flex-row justify-start items-center gap-2'>
                     <h1>< IoIosMail /></h1>
