@@ -13,8 +13,8 @@ body {
 
 .logo-name {
     text-decoration: none;
-    color: rgb(221, 218, 218);
-    font-size: 1rem;
+    color: rgb(7, 7, 7);
+    font-size: 1.2rem;
 }
 
 .greenway:hover {
@@ -148,30 +148,30 @@ body {
 }
 
 /* Slideshow container */
-.section1 {
+/* .section1 {
     background-color: #ffb0a9;
-}
+} */
 
-.slideshow-container {
+/* .slideshow-container {
     max-width: 60%;
     position: relative;
     margin: auto;
-}
+} */
 
-@media (max-width :700px) {
+/* @media (max-width :700px) {
     .slideshow-container {
         max-width: 100%;
     }
-}
+} */
 
 /* Hide the images by default  */
-.myslides {
+/* .myslides {
     display: none;
     text-align: center;
-}
+} */
 
 /* Next and previous buttons  */
-.prev,
+/* .prev,
 .next {
     cursor: pointer;
     position: absolute;
@@ -185,9 +185,9 @@ body {
     transition: 0.6s ease;
     border-radius: 0 3px 3px 0;
     user-select: none;
-}
+} */
 
-.next {
+/* .next {
     right: 0px;
     border-radius: 3px 0 0 3px;
 }
@@ -195,26 +195,26 @@ body {
 .prev:hover,
 .next:hover {
     background-color: rgba(0, 0, 0, 0.8);
-}
+} */
 
 /* Number text (1/3 etc) */
-.number-text {
+/* .number-text {
     color: #000000;
     font-size: 20px;
     padding: 8px 12px;
     position: absolute;
     top: 0;
-}
+} */
 
-.join-button {
+/* .join-button {
     position: absolute;
     text-align: center;
     bottom: 30px;
     width: 100%;
-}
+} */
 
 /* Join Us button on slider */
-.slideshow-container button {
+/* .slideshow-container button {
     font-size: 100px;
     background-color: rgb(126, 22, 158);
     border: 3px solid rgb(126, 22, 158);
@@ -228,15 +228,15 @@ body {
     cursor: pointer;
     transition-duration: 0.3s;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.521), 0 6px 20px 0 rgba(0, 0, 0, 0.521)
-}
+} */
 
-button:hover {
+/* button:hover {
     background-color: white;
     color: rgb(0, 0, 0);
-}
+} */
 
 /* The dots/bullets */
-.dot {
+/* .dot {
     cursor: pointer;
     height: 15px;
     width: 15px;
@@ -250,10 +250,10 @@ button:hover {
 .active,
 .dot:hover {
     background-color: #717171;
-}
+} */
 
 /* Fading Amimation */
-.fade {
+/* .fade {
     animation-name: fade;
     animation-duration: 1.5s;
 }
@@ -270,19 +270,26 @@ button:hover {
 
 .slidepic {
     width: 100%;
-}
+} */
 
 /* second section of landing page */
 .section2-title {
     display: flex;
     justify-content: center;
     margin-top: 30px;
+    color: brown;
+    font-size: large;
+    font-weight: bold;
+    background-color: #f9e79b;
+    width: fit-content;
+
 }
 
 .section2-row1,
 .section2-row2 {
     display: flex;
     justify-content: center;
+
 }
 
 .box1,
@@ -312,7 +319,7 @@ button:hover {
 .number4,
 .number5,
 .number6 {
-    font-size: 11em;
+    font-size: 10em;
     font-weight: bold;
     color: #f9e79b;
 }
@@ -324,14 +331,36 @@ button:hover {
 .intext5,
 .intext6 {
     position: absolute;
-    top: 30px;
+    top: 45px;
     text-align: center;
+}
+
+
+@media only screen and (max-width: 40em) {
+
+    .section2-row1,
+    .section2-row2 {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    .box1,
+    .box2,
+    .box3,
+    .box4,
+    .box5,
+    .box6 {
+        width: 300px;
+        text-align: center;
+        margin: 5px;
+    }
 }
 
 /* Third section of landing page */
 .section3 {
     display: flex;
-    margin-top: 150px;
+    margin-top: 50px;
 }
 
 .section3-bgcolor {
@@ -348,7 +377,6 @@ button:hover {
     background-color: #ffffff;
     width: 210px;
     margin: 15px;
-    height: 280px;
     position: relative;
     box-shadow: 5px 5px 16px;
     align-items: center;
@@ -393,27 +421,50 @@ button:hover {
     font-weight: bold;
 }
 
+@media only screen and (max-width: 40em) {
+    .section3-bgcolor {
+
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-content: center;
+        justify-items: center;
+
+    }
+
+    #section3-box1,
+    #section3-box3 {
+        position: relative;
+        top: 0;
+    }
+
+    #section3-box2,
+    #section3-box4 {
+        position: relative;
+        top: 0;
+    }
+
+}
+
 /* fourth section of landing page */
 .section4 {
-    background-color: greenyellow;
+    background-color: rgba(71, 187, 133, 0.685);
     margin-top: 100px;
-    padding: 100px 500px;
+    padding: 10px 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 300px;
 }
 
-.section4-description {
+/* .section4-description {
     text-align: center;
     margin-bottom: 50px;
-}
+} */
 
 .section4-button {
-    background-color: yellow;
+    background-color: rgb(253, 250, 37);
     border: none;
-    padding: 15px;
-    border-radius: 25px;
-    font-weight: bold;
+    padding: 5px;
+    border-radius: 15px;
+    font-size: 1 rem;
     cursor: pointer;
 }

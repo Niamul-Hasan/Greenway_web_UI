@@ -15,7 +15,7 @@ const LiftingPage = () => {
 
     return (
         <div className="w-3/4 mx-auto">
-            <h1 className="text-4xl font-semibold font-sans text-center mt-16 hidden lg:flex">
+            <h1 className="text-4xl font-semibold font-sans text-center pt-10 hidden lg:flex">
                 Welcome To Greenway Academic Web Authentication System.<br />
                 Please Select Your Singn Up Pannel First.
             </h1>

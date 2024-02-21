@@ -1,9 +1,12 @@
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/UserContext";
 import { useContext } from "react";
-import ScrollingText from "./ScrollingText";
 import banner from "../../../assets/green.gif"
 import Navbar from "../SharedPages/Navbar";
+import WhyChoose from "./Partitions/WhyChoose";
+import AboutUs from "./Partitions/AboutUs";
+import LittleInfo from "./Partitions/LittleInfo";
+import TopBoard from "./Partitions/TopBoard";
 
 const Home = () => {
 
@@ -29,13 +32,17 @@ const Home = () => {
     }
     return (
         <div>
-            <ScrollingText></ScrollingText>
             <Navbar></Navbar>
-
-            <div className="mx-auto w-11/12">
+            <TopBoard></TopBoard>
+            <div className="mx-auto w-full lg:w-11/12 mb-40">
                 <img src={banner} alt="" className="w-full rounded-xl shadow-lg shadow-black" />
             </div>
-            <div className='text-center my-5'>
+            <WhyChoose></WhyChoose>
+            <AboutUs></AboutUs>
+            <LittleInfo></LittleInfo>
+
+
+            <div className='text-center my-5 w-full'>
                 <h1 className="text-4xl uppercase underline">This is homepage</h1>
                 <h1>The Current User is:{user?.email || user?.phoneNumber}</h1>
 

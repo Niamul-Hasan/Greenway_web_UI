@@ -32,18 +32,17 @@ const Navbar = () => {
             Home</NavLink></li>
 
 
-        <li className="font-bold "><NavLink to='/products'>Gallery</NavLink></li>
-        <li className="font-bold "><NavLink to='/dashboard'>Dashboard</NavLink></li>
+        <li className="font-bold "><NavLink to='/'>Gallery</NavLink></li>
+        <li className="font-bold "><NavLink to='/'>Dashboard</NavLink></li>
 
-        <li className="font-bold "><NavLink to='/csr'>CSR</NavLink></li>
-        <li className="font-bold "><NavLink to='/covid'>Covid-19</NavLink></li>
-        <li className="font-bold "><NavLink to='/career'>Career</NavLink></li>
+        <li className="font-bold "><NavLink to='/'>Covid-19</NavLink></li>
+        <li className="font-bold "><NavLink to='/'>Career</NavLink></li>
 
-        <li className="font-bold "><NavLink to='/about'>About Us</NavLink></li>
+        <li className="font-bold "><NavLink to='/'>About Us</NavLink></li>
 
-        <li>{user?.email && <span><FaRegUserCircle></FaRegUserCircle>{user?.email}</span>}</li>
-        <li>{user?.email ? <button onClick={signOut} className='btn btn-sm btn-error shadow-xl'>Sign Out</button>
-            : <button className='btn btn-sm btn-success' onClick={() => navigate("/login")}>Login</button>}</li>
+        <li>{user && <span><FaRegUserCircle></FaRegUserCircle>{user?.email || user?.phoneNumber}</span>}</li>
+        <li>{user ? <button onClick={signOut} className='btn btn-sm btn-error shadow-xl'>Sign Out</button>
+            : <button className='btn btn-sm btn-success' onClick={() => navigate("/lifting")}>Login</button>}</li>
 
 
     </>
@@ -61,16 +60,18 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <NavLink to='/' >
-                        <div className="flex flex-row justify-center items-center gap-2">
-                            <div>
+                        <div className="flex flex-row justify-around items-center gap-4 bg-gray-200">
+                            <div className="">
                                 <img src={logo} alt="" className='h-full w-full' />
                             </div>
                             <div>
-                                <a className="logo-name" href="/"><h2><span className="greenway"><span style={{ color: "green;" }}>G</span>reenway</span> <span className="academic"><span style={{ color: "red;" }}>A</span>cademic <span style={{ color: "red;" }}>C</span>oaching</span></h2></a>
+                                <a className="logo-name" href="/"><h2><span className="greenway"><span style={{ color: "green" }}>G</span>reenway</span> <span className="academic"><span style={{ color: "red" }}>I</span>nstitute </span></h2></a>
                             </div>
                         </div>
                     </NavLink>
                 </div>
+
+
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
                         {navItem}
