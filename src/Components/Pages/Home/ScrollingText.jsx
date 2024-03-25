@@ -9,10 +9,10 @@ const ScrollingText = () => {
                     pauseOnHover={true}
                     speed={80}>
                     <p>This page is under construction now ...</p>
+                    {/* <p>This page is under construction now ...</p>
                     <p>This page is under construction now ...</p>
                     <p>This page is under construction now ...</p>
-                    <p>This page is under construction now ...</p>
-                    <p>This page is under construction now ...</p>
+                    <p>This page is under construction now ...</p> */}
                 </Marquee>
             </div>
         </div>
