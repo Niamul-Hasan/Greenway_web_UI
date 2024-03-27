@@ -51,7 +51,7 @@ const Navbar = () => {
 
     return (
         <div style={{ height: 'auto' }} className='flex flex-row justify-center items-center w-full sticky top-0 z-20'>
-            <div className="navbar bg-gray-200">
+            <div className="navbar bg-gray-200 bg-opacity-30">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -62,7 +62,7 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <NavLink to='/' >
-                        <div className="flex flex-row justify-around items-center gap-4 bg-gray-200">
+                        <div className="flex flex-row justify-around items-center gap-4 ">
                             <div className="">
                                 <img src={logo} alt="" className='h-full w-full' style={{ height: "80px", width: "80px" }} />
                             </div>

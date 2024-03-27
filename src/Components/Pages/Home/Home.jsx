@@ -2,7 +2,6 @@ import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/UserContext";
 import { useContext } from "react";
 import banner from "../../../assets/green.gif"
-import Navbar from "../SharedPages/Navbar";
 import WhyChoose from "./Partitions/WhyChoose";
 import AboutUs from "./Partitions/AboutUs";
 import LittleInfo from "./Partitions/LittleInfo";
@@ -32,7 +31,6 @@ const Home = () => {
     }
     return (
         <div>
-            <Navbar></Navbar>
             <TopBoard></TopBoard>
             <div className="mx-auto w-full lg:w-11/12 mb-40">
                 <img src={banner} alt="" className="w-full rounded-xl shadow-lg shadow-black" />

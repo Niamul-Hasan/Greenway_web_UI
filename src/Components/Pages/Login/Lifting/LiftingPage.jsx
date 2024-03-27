@@ -2,7 +2,6 @@ import { useNavigate } from "react-router-dom";
 import img1 from "../../../../assets/teacher.png";
 import img2 from "../../../../assets/student.png";
 import login from "../../../../assets/login.gif";
-import Navbar from "../../SharedPages/Navbar";
 
 
 const LiftingPage = () => {
@@ -16,7 +15,6 @@ const LiftingPage = () => {
 
     return (
         <>
-            <Navbar></Navbar>
             <div className="w-3/4 mx-auto">
                 <h1 className="text-4xl font-semibold font-sans text-center pt-10 hidden lg:flex">
                     Welcome To Greenway Institute Web Authentication System.<br />

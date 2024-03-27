@@ -4,7 +4,6 @@ import Loading from '../../SharedPages/Loading';
 import { AuthContext } from '../../../Context/UserContext';
 import { useContext } from 'react';
 import sidebg from "../../../../assets/sideBanner.jpg"
-import Navbar from '../../SharedPages/Navbar';
 
 const AccountCheck = () => {
     const { user } = useContext(AuthContext);
@@ -49,7 +48,7 @@ const AccountCheck = () => {
 
     return (
         <>
-            <Navbar></Navbar>
+
             <div className='bg-gradient-to-tl from-green-200 via-green-300 to-blue-500'>
                 <div className='flex lg:flex-row lg:justify-between lg:items-center flex-col items-center gap-2'>
                     <div className='lg:w-4/5 w-full'>
