@@ -4,6 +4,7 @@ import Loading from '../../SharedPages/Loading';
 import { AuthContext } from '../../../Context/UserContext';
 import { useContext } from 'react';
 import sidebg from "../../../../assets/sideBanner.jpg"
+import { Helmet } from 'react-helmet-async';
 
 const AccountCheck = () => {
     const { user } = useContext(AuthContext);
@@ -15,15 +16,16 @@ const AccountCheck = () => {
         queryFn: async () => {
             const res = await fetch(`http://localhost:4040/stdInfo/${number}`);
             const data = await res.json();
-            if (data.length < 1) {
-                return navigate("/studentInfo")
-            }
+
             return data;
         }
     });
 
     if (isLoading) {
         return <Loading></Loading>
+    }
+    if (data.length < 1) {
+        return navigate("/studentInfo")
     }
     console.log(data)
 
@@ -48,7 +50,9 @@ const AccountCheck = () => {
 
     return (
         <>
-
+            <Helmet>
+                <title>Greenway | User Info</title>
+            </Helmet>
             <div className='bg-gradient-to-tl from-green-200 via-green-300 to-blue-500'>
                 <div className='flex lg:flex-row lg:justify-between lg:items-center flex-col items-center gap-2'>
                     <div className='lg:w-4/5 w-full'>
