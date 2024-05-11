@@ -33,7 +33,7 @@ const Navbar = () => {
 
 
         <li className="font-bold "><NavLink to='/'>Gallery</NavLink></li>
-        <li className="font-bold "><NavLink to='/'>Dashboard</NavLink></li>
+        <li className="font-bold "><NavLink to='/dashboard/dashbordLanding'>Dashboard</NavLink></li>
 
         <li className="font-bold "><NavLink to='/'>Covid-19</NavLink></li>
         <li className="font-bold "><NavLink to='/'>Career</NavLink></li>
@@ -57,7 +57,7 @@ const Navbar = () => {
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </label>
-                        <ul id='mobilemenu' tabIndex={0} className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                        <ul id='mobilemenu' tabIndex={0} className="menu menu-sm dropdown-content mt-3 p-2 gap-2 shadow bg-base-100 rounded-box w-52">
                             {navItem}
                         </ul>
                     </div>
@@ -76,7 +76,7 @@ const Navbar = () => {
 
 
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1">
+                    <ul className="menu menu-horizontal px-1 gap-4">
                         {navItem}
 
                     </ul>

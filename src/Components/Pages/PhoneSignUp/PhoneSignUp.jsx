@@ -1,4 +1,4 @@
-import 'react-phone-number-input/style.css'
+import 'react-phone-number-input/Style.css'
 import PhoneInput from 'react-phone-number-input'
 import { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -46,7 +46,7 @@ const PhoneSignUp = () => {
         if (otp === "" || otp === null) return;
         try {
             await result.confirm(otp);
-            navigate("/accountCheck");
+            navigate("/dashboard/dashbordLanding");
         } catch (err) {
             setError(err.message);
         }

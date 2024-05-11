@@ -8,50 +8,68 @@ import LiftingPage from "../Pages/Login/Lifting/LiftingPage";
 import IdAuth from "../Pages/Login/TeacherLog/IdAuth";
 import StudentInfo from "../Pages/Login/StudentLog/StudentInfo";
 import AccountCheck from "../Pages/Login/StudentLog/AccountCheck";
+import DashBoardLayout from "../LayOut/DashBoardLayout";
+import Dashboard from "../Pages/DashBoard/Dashboard";
 
 
 
 
-const router = createBrowserRouter([{
-    path: '/',
-    element: <LandingPage></LandingPage>,
-    children: [
-        {
-            path: '/',
-            element: <Home></Home>
-        },
-        {
-            path: '/lifting',
-            element: <LiftingPage></LiftingPage>
-        },
-        {
-            path: '/login',
-            element: <Login></Login>
-        },
-        {
-            path: '/register',
-            element: <Register></Register>
-        },
-        {
-            path: '/idAuth',
-            element: <IdAuth></IdAuth>
-        },
-        {
-            path: '/phoneSign',
-            element: <PhoneSignUp></PhoneSignUp>
-        },
-        {
-            path: '/studentInfo',
-            element: <StudentInfo></StudentInfo>
-        },
-        {
-            path: '/accountCheck',
-            element: <AccountCheck />
-        },
+const router = createBrowserRouter([
+    {
+        path: '/',
+        element: <LandingPage></LandingPage>,
+        children: [
+            {
+                path: '/',
+                element: <Home></Home>
+            },
+            {
+                path: '/lifting',
+                element: <LiftingPage></LiftingPage>
+            },
+            {
+                path: '/login',
+                element: <Login></Login>
+            },
+            {
+                path: '/register',
+                element: <Register></Register>
+            },
+            {
+                path: '/idAuth',
+                element: <IdAuth></IdAuth>
+            },
+            {
+                path: '/phoneSign',
+                element: <PhoneSignUp></PhoneSignUp>
+            },
+            {
+                path: '/studentInfo',
+                element: <StudentInfo></StudentInfo>
+            },
+            // {
+            //     path: '/accountCheck',
+            //     element: <AccountCheck />
+            // },
 
 
-    ]
+        ]
 
-}]);
+    },
+    {
+        path: "dashboard",
+        element: <DashBoardLayout></DashBoardLayout>,
+        children: [
+            {
+                path: "dashbordLanding",
+                element: <Dashboard></Dashboard>
+            },
+            {
+                path: 'accountCheck',
+                element: <AccountCheck />
+            },
+        ]
+    }
+]);
 
 export default router;
