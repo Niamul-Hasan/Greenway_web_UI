@@ -33,7 +33,7 @@ const DashBoardLayout = () => {
                         </div>
                         <div className="flex-1 px-2 mx-2">Navbar Title</div>
                         <div className="flex-none hidden lg:block">
-                            <ul className="menu menu-horizontal">
+                            <ul className="menu menu-horizontal gap-4">
                                 {/* Navbar menu content here */}
                                 {navItem}
                             </ul>
@@ -44,7 +44,7 @@ const DashBoardLayout = () => {
                 </div>
                 <div className="drawer-side">
                     <label htmlFor="dashBoard-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
-                    <ul className="menu p-4 w-80 bg-green-400">
+                    <ul className="menu p-4 w-80 bg-green-400 gap-2">
                         {/* Sidebar content here */}
                         {navItem}
                     </ul>
