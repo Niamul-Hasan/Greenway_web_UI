@@ -43,7 +43,7 @@ const IdAuth = () => {
                     {flag && <>
                         {
                             isMatch ? <div>
-                                <button onClick={() => navigate("/register")} className="btn btn-sm btn-success">Sign In</button>
+                                <button onClick={() => navigate("/register")} className="btn btn-sm btn-success">Sign Up</button>
                             </div> : <div>
                                 <p className="text-error font-serif font-semibold text-xl">You are not an authorized User. Please enter the correct ID</p>
                                 <div className="card-actions justify-end mt-4">

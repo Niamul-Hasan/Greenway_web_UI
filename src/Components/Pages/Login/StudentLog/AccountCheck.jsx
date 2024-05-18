@@ -8,7 +8,9 @@ import { Helmet } from 'react-helmet-async';
 
 const AccountCheck = () => {
     const { user } = useContext(AuthContext);
-    const number = user.phoneNumber;
+    const number = user?.phoneNumber;
+    const email = user?.email;
+    console.log(email);
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const navigate = useNavigate();
     const { data, isLoading } = useQuery({
@@ -25,8 +27,12 @@ const AccountCheck = () => {
         return <Loading></Loading>
     }
     if (data.length < 1) {
+        if (email) {
+            return navigate("/")
+        }
         return navigate("/studentInfo")
     }
+
     console.log(data)
 
 
@@ -51,7 +57,7 @@ const AccountCheck = () => {
     return (
         <>
             <Helmet>
-                <title>Greenway | User Info</title>
+                <title>Greenway | User Profile</title>
             </Helmet>
             <div className='bg-gradient-to-tl from-green-200 via-green-300 to-blue-500'>
                 <div className='flex lg:flex-row lg:justify-between lg:items-center flex-col items-center gap-2'>

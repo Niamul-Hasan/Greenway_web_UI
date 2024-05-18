@@ -3,8 +3,10 @@ import React, { useContext, useState } from 'react';
 import { AuthContext } from '../Context/UserContext';
 import { FcGoogle } from 'react-icons/fc';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { RiAlarmWarningFill } from "react-icons/ri";
 
 const Login = () => {
+    const [logError, setLogError] = useState('');
     const { signIn, signInWithGoogle } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
@@ -22,7 +24,7 @@ const Login = () => {
             console.log(user);
             form.reset();
             navigate(from, { replace: true });
-        }).catch(error => console.error(error));
+        }).catch(error => setLogError(error));
     }
 
     const handleGoogle = () => {
@@ -60,6 +62,7 @@ const Login = () => {
                                 </label>
                             </div>
                             <div className="form-control mt-6">
+                                {logError && <h1 className='text-lg text-red-600 btn btn-warning my-2'> <span><RiAlarmWarningFill /></span>Invalid user</h1>}
                                 <button className="btn btn-primary">Login</button>
                                 <div className="divider">OR</div>
                                 <button onClick={handleGoogle} className="btn btn-success mb-2">

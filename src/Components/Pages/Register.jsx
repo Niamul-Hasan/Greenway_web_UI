@@ -4,12 +4,14 @@ import { AuthContext } from '../Context/UserContext';
 import { FcGoogle } from 'react-icons/fc';
 import { Link, useNavigate } from 'react-router-dom';
 import useToken from './Hooks/useToken';
+import { TiWarning } from "react-icons/ti";
 
 const Register = () => {
     const { createUser, signInWithGoogle } = useContext(AuthContext);
     const [isHovering, setIsHovering] = useState(false);
     const navigate = useNavigate();
     const [user, setUser] = useState('');
+    const [registerError, setRegisterError] = useState('');
 
     const handleMouseEnter = () => {
         setIsHovering(true);
@@ -27,6 +29,7 @@ const Register = () => {
         const email = form.email.value;
         const password = form.password.value;
 
+
         console.log(email, password);
         createUser(email, password).then(result => {
             const user = result.user;
@@ -34,7 +37,7 @@ const Register = () => {
             console.log('registered user', user)
         })
             .catch(error => {
-                console.error(error);
+                setRegisterError(error);
             })
     }
     const [token] = useToken(user)
@@ -76,25 +79,33 @@ const Register = () => {
                             </div>
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text">Password</span>
+                                    <span className="label-text">Password(Minimum 6 Charecters)</span>
                                 </label>
                                 <input type="password" name='password' placeholder="password" className="input input-bordered" required />
 
                             </div>
+                            <h1 className='text-green-500 text-sm mt-2'>I Have Already An Account.
+                                <span className='link text-blue-600 ms-2' onClick={() => navigate('/login')}>Login</span></h1>
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary">Register</button>
+                                {registerError && <h1>Something Went worng. May be this email is used before </h1>}
 
                             </div>
                         </form>
                     </div>
                 </div>
                 <div className="divider lg:divider-horizontal">OR</div>
-                <div>
+                <div className='flex flex-col justify-center items-center'>
+                    <div className='flex flex-col gap-4 items-center'>
+                        <div className='btn btn-warning'>
+                            <span className='text-4xl text-red-500'><TiWarning></TiWarning></span>  You must register with your valid E-mail address to become an admin.
+                        </div>
+                        <div><Link to="/phoneSign"><button className="btn btn-success">Register with Phone Number</button>
+                        </Link></div>
+                    </div>
 
-                    <Link to="/phoneSign"><button className="btn btn-success">Register with Phone Number</button>
-                    </Link>
                     <div className="divider">OR</div>
-                    <button onClick={handleGoogle} className="btn mb-2"
+                    <div><button onClick={handleGoogle} className="btn mb-2"
                         onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}
                         style={{
                             backgroundColor: isHovering ? 'gray' : 'black',
@@ -102,7 +113,7 @@ const Register = () => {
                         }}
                     >
                         <span className='text-2xl ms-4'><FcGoogle></FcGoogle></span>
-                        Register With Google</button>
+                        Register With Google</button></div>
                 </div>
             </div>
         </div>
