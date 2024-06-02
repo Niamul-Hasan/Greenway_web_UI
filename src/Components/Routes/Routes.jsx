@@ -10,6 +10,7 @@ import StudentInfo from "../Pages/Login/StudentLog/StudentInfo";
 import AccountCheck from "../Pages/Login/StudentLog/AccountCheck";
 import DashBoardLayout from "../LayOut/DashBoardLayout";
 import Dashboard from "../Pages/DashBoard/Dashboard";
+import PrivateRoute from "../Pages/Private Route/PrivateRoute";
 
 
 
@@ -58,7 +59,7 @@ const router = createBrowserRouter([
     },
     {
         path: "dashboard",
-        element: <DashBoardLayout></DashBoardLayout>,
+        element: <PrivateRoute><DashBoardLayout></DashBoardLayout></PrivateRoute>,
         children: [
             {
                 path: "dashbordLanding",
@@ -66,6 +67,10 @@ const router = createBrowserRouter([
             },
             {
                 path: 'accountCheck',
+                element: <AccountCheck />
+            },
+            {
+                path: 'dashbordLanding/accountCheck',
                 element: <AccountCheck />
             },
         ]

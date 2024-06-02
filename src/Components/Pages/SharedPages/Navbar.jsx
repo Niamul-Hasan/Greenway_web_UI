@@ -33,6 +33,7 @@ const Navbar = () => {
 
 
         <li className="font-bold "><NavLink to='/'>Gallery</NavLink></li>
+        {/* <li className="font-bold "><NavLink to='/dashboard/dashbordLanding'>Dashboard</NavLink></li> */}
         <li className="font-bold "><NavLink to='/dashboard/dashbordLanding'>Dashboard</NavLink></li>
 
         <li className="font-bold "><NavLink to='/'>Covid-19</NavLink></li>
